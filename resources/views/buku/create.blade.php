@@ -3,8 +3,9 @@
  
         <div class="container mx-5 m-5">
             <h4>Tambah Buku</h4>
-            <form action="{{route ('buku.store')}}" method="post" class="form form-control">
+            <form action="{{route ('buku.store')}}" method="post" class="form form-control  ">
             @csrf
+            <div class="col md-6">
             <label for="" class="form-label">Judul</label>
             <br>
             <input type="text" name="judul">
@@ -20,6 +21,7 @@
             <label for="" class="form-label">Tanggal Terbit</label>
             <br>
             <input type="date" name="tgl_terbit">
+            </div>
             <br>
             <a href="/" class="btn btn-danger mt-4">Batal</a>
             <button class="btn btn-success mt-4" type="submit">Send Data</button>

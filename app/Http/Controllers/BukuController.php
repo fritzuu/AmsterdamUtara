@@ -32,4 +32,17 @@ public function destroy($id){
     $data =BukuModel::where('id',$id)->delete();
     return redirect('/');
 }
+//Edit Buku
+public function edit($id){
+    $buku = BukuModel::find($id);
+    return view('buku.edit',['buku'=>$buku]);
+}
+public function update(Request $request,$id){
+    $buku = BukuModel::find($id);
+    $buku->judul = $request->judul;
+    $buku->penulis = $request->penulis;
+    $buku->harga = $request->harga; $buku->tgl_terbit = $request->tgl_terbit;
+    $buku->save();
+return redirect()->route('buku.index');
+}
 }

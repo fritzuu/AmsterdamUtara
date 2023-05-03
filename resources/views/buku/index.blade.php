@@ -21,6 +21,7 @@
             <td>{{$buku->tgl_terbit}}</td>
             <td>
             <a href="{{route('buku.destroy',$buku->id)}}" class="btn btn-danger">Hapus</a>
+            <a href="{{route('buku.edit',$buku->id)}}" class="btn btn-warning">Edit</a>
             </td>
         </tr>
         @endforeach
